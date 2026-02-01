@@ -17,13 +17,13 @@ Table 4 reports node-local file counts and storage sizes that require direct acc
 ## 2) Required Materials
 
 ### Hash‑only verification artefacts and analysis dataset:
-
+Telles, Fernando (2026), “Stage IV Audit Reproducibility Dataset (HVT-A): Deterministic Hash-Based Verification and Human Verification Time Outputs”, Mendeley Data, V1, doi: 10.17632/fzw4pzkd83.1
 
 ### Deterministic Extraction scripts (Python):
-
+https://github.com/auditlogai/evidence-verification/tree/main/src/python
 
 ### Statistical Analyses scripts (R):
-
+https://github.com/auditlogai/evidence-verification/tree/main/src/R
 
 ### Software environment
 - Python 3 (for optional regeneration of the analysis dataset)
