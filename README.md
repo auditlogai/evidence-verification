@@ -1,6 +1,9 @@
 # evidence-verification
 Deterministic, hash-only verification artefacts, extraction scripts, and statistical code supporting a blinded, multi-operator, single-site proof-of-concept study of zero-custody post-export audit verification for clinical and regulatory evidence. Public release enables independent reproduction and falsification.
 
+The complete dataset is available in:
+Telles, Fernando (2026), “Stage IV Audit Reproducibility Dataset (HVT-A): Deterministic Hash-Based Verification and Human Verification Time Outputs”, Mendeley Data, V1, doi: 10.17632/fzw4pzkd83.1
+
 ## Execution Overview
 
 This repository supports deterministic reproduction of all reported Stage IV (HVT-A) analyses using released hash-only verification artefacts and disclosed analysis scripts. Complete instructions are contained in REPRODUCIBILITY.md. Two reproduction modes are provided.
