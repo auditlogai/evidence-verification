@@ -1,0 +1,45 @@
+[
+  {
+    "timestamp": "2025-12-15T06:14:37.580788Z",
+    "event": "ANCHOR_OP_RETURN_REGISTERED",
+    "meta_id": "Node2_IV005",
+    "input": {
+      "session_context": "Node2_IV-RUN-20251215-S01",
+      "session_meta_id": "Node2_IV005",
+      "txid": "4d6eac47cb8b9b3ac342aaad0e12edd13a1ad5c63922aaba7dbf4dee4db99f23",
+      "block_height": 927936,
+      "payload": "SENTINEL|SESSION|ad52ede68ddcaa598302dca58cadef1b79583840|a57e399f",
+      "source_receipt": "(bundle:Node2_IV005)",
+      "hash_source": "bundle.job_hashes"
+    },
+    "output": {
+      "status": "anchored",
+      "anchored": true,
+      "txid": "4d6eac47cb8b9b3ac342aaad0e12edd13a1ad5c63922aaba7dbf4dee4db99f23",
+      "block": 927936,
+      "payload": "SENTINEL|SESSION|ad52ede68ddcaa598302dca58cadef1b79583840|a57e399f",
+      "sha256": "a57e399f61b7c2dcd186dda8a0e416513eb60c07cacbe7413b368a0680c5a2f0",
+      "ripemd160": "ad52ede68ddcaa598302dca58cadef1b79583840"
+    },
+    "audit": {
+      "AI_used": true,
+      "LLM_used": "LLM1",
+      "human_verified": true,
+      "module_version": "v.december15.25",
+      "ai_editor_LLM_human_agreement": true,
+      "VALIS_template_enforced": true,
+      "reviewer": "Dr Jiexiang Yang",
+      "human_signature": {
+        "signer": "DRYANG",
+        "decision": "approved",
+        "reason": "anchor confirmed on-chain",
+        "signed_at_utc": "2025-12-15T06:14:37Z",
+        "txid": "4d6eac47cb8b9b3ac342aaad0e12edd13a1ad5c63922aaba7dbf4dee4db99f23",
+        "block": 927936,
+        "signed_at": "2025-12-15T06:14:37.578562Z"
+      },
+      "AI_override": false
+    },
+    "timestamp_confirmed": true
+  }
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "timestamp": "2025-12-16T01:29:47.741753Z",
+    "event": "ANCHOR_OP_RETURN_REGISTERED",
+    "meta_id": "Node2_IV029",
+    "input": {
+      "session_context": "Node2_IV-RUN-20251215-S01",
+      "session_meta_id": "Node2_IV029",
+      "txid": "cdbf78e72ed0adcd54267b5446d985d908a6b0e6cfb083257ec9af6db128936e",
+      "block_height": 928055,
+      "payload": "SENTINEL|SESSION|1cba9b2c59486c25065d0c11fcbf86038f6fff1a|3b404e33",
+      "source_receipt": "(bundle:Node2_IV029)",
+      "hash_source": "bundle.job_hashes"
+    },
+    "output": {
+      "status": "anchored",
+      "anchored": true,
+      "txid": "cdbf78e72ed0adcd54267b5446d985d908a6b0e6cfb083257ec9af6db128936e",
+      "block": 928055,
+      "payload": "SENTINEL|SESSION|1cba9b2c59486c25065d0c11fcbf86038f6fff1a|3b404e33",
+      "sha256": "3b404e3339afea2fdedfd82998909265b8c8ce40981cf7abb3fda19aff80129b",
+      "ripemd160": "1cba9b2c59486c25065d0c11fcbf86038f6fff1a"
+    },
+    "audit": {
+      "AI_used": true,
+      "LLM_used": "LLM1",
+      "human_verified": true,
+      "module_version": "v.december16.25",
+      "ai_editor_LLM_human_agreement": true,
+      "VALIS_template_enforced": true,
+      "reviewer": "Eng Benjamin Hookey",
+      "human_signature": {
+        "signer": "ENGHOOKEY",
+        "decision": "approved",
+        "reason": "anchor confirmed on-chain",
+        "signed_at_utc": "2025-12-16T01:29:47Z",
+        "txid": "cdbf78e72ed0adcd54267b5446d985d908a6b0e6cfb083257ec9af6db128936e",
+        "block": 928055,
+        "signed_at": "2025-12-16T01:29:47.733251Z"
+      },
+      "AI_override": false
+    },
+    "timestamp_confirmed": true
+  }
+]
