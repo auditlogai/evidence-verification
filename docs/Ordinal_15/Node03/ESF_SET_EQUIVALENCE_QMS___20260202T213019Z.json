@@ -1,0 +1,19 @@
+{
+  "ts_utc": "2026-02-01T20:21:07Z",
+  "result": "ESF SET EQUIVALENT",
+  "baseline_esf_rows": 84,
+  "audit_esf_rows": 84,
+  "baseline_distinct_esf": 84,
+  "audit_distinct_esf": 84,
+  "baseline_only_count": 0,
+  "audit_only_count": 0,
+  "baseline_esf_packet": "C:\\IV\\Integrity_Assurance\\ZC_ESF_Node03_HVT_A_SOURCE\\ESF_SET_QMS.ndjson",
+  "audit_esf_packet": "C:\\IV\\Integrity_Assurance\\ZC_ESF_Node03_HVT_A_COMPLETED\\ESF_SET_QMS.ndjson",
+  "out_diff_ndjson": "C:\\IV\\Integrity_Assurance\\NODE03_SOURCE_VS_COMPLETED\\ESF_SET_DIFF_QMS.ndjson",
+  "policy": {
+    "qms_safe": true,
+    "container_identity": "(esf_sha256,row_pairs) multiset",
+    "paths_ignored": true,
+    "names_ignored": true
+  }
+}

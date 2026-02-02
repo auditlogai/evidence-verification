@@ -1,0 +1,59 @@
+{
+  "ts_utc": "2026-02-01T20:20:59Z",
+  "inputs": {
+    "source_run_root": "C:\\IV\\Integrity_Assurance\\ZC_PACKET_Node03_HVT_A_SOURCE",
+    "windows_run_root": "C:\\IV\\Integrity_Assurance\\ZC_PACKET_Node03_HVT_A_COMPLETED",
+    "source_global_path": "C:\\IV\\Integrity_Assurance\\ZC_PACKET_Node03_HVT_A_SOURCE\\02_AUDIT_HASHES\\HASHES_GLOBAL.ndjson",
+    "windows_global_path": "C:\\IV\\Integrity_Assurance\\ZC_PACKET_Node03_HVT_A_COMPLETED\\02_AUDIT_HASHES\\HASHES_GLOBAL.ndjson"
+  },
+  "counts": {
+    "source_total_rows_read": 433,
+    "windows_total_rows_read": 433,
+    "source_valid_rows": 433,
+    "windows_valid_rows": 433,
+    "source_invalid_rows": 0,
+    "windows_invalid_rows": 0,
+    "distinct_pairs_union": 328,
+    "missing_count": 0,
+    "extras_count": 0
+  },
+  "fingerprints": {
+    "source": {
+      "sha256_fingerprint": "73acf88dbd3184090644f2b12fd5be2b70f8884907a1cc8d6752d89774775f1a",
+      "ripemd160_fingerprint": "cf1d9b39d940c421fdaf7749fc1ec359d2557b64"
+    },
+    "windows": {
+      "sha256_fingerprint": "73acf88dbd3184090644f2b12fd5be2b70f8884907a1cc8d6752d89774775f1a",
+      "ripemd160_fingerprint": "cf1d9b39d940c421fdaf7749fc1ec359d2557b64"
+    },
+    "match": true
+  },
+  "duplicates": {
+    "source": {
+      "keys_with_duplicates": 18,
+      "duplicate_instances": 105
+    },
+    "windows": {
+      "keys_with_duplicates": 18,
+      "duplicate_instances": 105
+    }
+  },
+  "policy": {
+    "comparison_key": "(sha256,ripemd160) multiset",
+    "paths_ignored": true,
+    "names_ignored": true,
+    "strict": true,
+    "fail_on_invalid": true,
+    "invalid_rows_quarantined": true,
+    "diff_output_sorted": true,
+    "diff_rows_include_samples": true
+  },
+  "result": "HASH PARITY PASS",
+  "artifacts": {
+    "summary": "C:\\IV\\Integrity_Assurance\\NODE03_SOURCE_VS_COMPLETED\\COMPARE_SUMMARY.json",
+    "missing": "C:\\IV\\Integrity_Assurance\\NODE03_SOURCE_VS_COMPLETED\\MISSING_GLOBAL.ndjson",
+    "extras": "C:\\IV\\Integrity_Assurance\\NODE03_SOURCE_VS_COMPLETED\\EXTRAS_GLOBAL.ndjson",
+    "invalid_source": null,
+    "invalid_windows": null
+  }
+}
