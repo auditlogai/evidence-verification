@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sentinel QMS v4 — Stage IIIB Context Figure (Panels 1–2)</title>
+  <style>
+    /* === Dark theme (consistent with Ordinal 14 aesthetic) === */
+    :root{
+      --bg:#020617;
+      --card:#0f1b33;
+      --ink:#e9eef8;
+      --muted:#9fb0c9;
+      --accent:#4cc9f0;
+      --line:rgba(255,255,255,.08);
+
+      --ok:#22c55e;
+      --warn:#facc15;
+      --fail:#f97373;
+      --op1:#14b8a6;
+      --op2:#0ea5e9;
+    }
+
+    body{
+      margin:0;
+      padding:16px;
+      background:var(--bg);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;
+      color:var(--ink);
+    }
+
+    .wrap{
+      max-width:1180px;
+      margin:0 auto;
+      padding:22px;
+      border-radius:18px;
+      background:linear-gradient(180deg,#020617 0%,#020617 100%);
+      box-shadow:0 10px 40px rgba(0,0,0,.55);
+      border:1px solid rgba(255,255,255,.05);
+    }
+
+    .head{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      margin-bottom:14px;
+    }
+    .eyebrow{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:var(--muted);
+    }
+    h3{
+      margin:0;
+      font-weight:850;
+      letter-spacing:.02em;
+      font-size:20px;
+      line-height:1.15;
+    }
+    .subtitle{
+      color:var(--muted);
+      font-size:13px;
+      max-width:860px;
+      line-height:1.35;
+    }
+    .mono{
+      font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+      letter-spacing:.01em;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-rows:auto auto;
+      gap:12px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 14px 14px;
+      page-break-inside:avoid;
+    }
+
+    .title{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:13px;
+      font-weight:750;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+    }
+    .step{
+      width:24px;height:24px;border-radius:999px;
+      display:grid;place-items:center;
+      background:#020617;
+      border:1px solid rgba(148,163,184,.55);
+      font-size:12px;font-weight:800;
+      flex:0 0 auto;
+    }
+    .body{
+      margin-top:4px;
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.35;
+    }
+
+    /* Panel 1: Corpus row */
+    .corpus-row{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      margin-top:10px;
+    }
+    .mini{
+      background:rgba(15,23,42,.88);
+      border:1px solid rgba(148,163,184,.35);
+      border-radius:12px;
+      padding:9px 10px;
+      font-size:11px;
+      line-height:1.35;
+    }
+    .mini-title{
+      font-weight:700;
+      margin-bottom:4px;
+      font-size:11px;
+      color:var(--ink);
+    }
+    .mini-line{
+      color:var(--muted);
+      margin-top:2px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:3px 8px;
+      border-radius:999px;
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      background:#020617;
+      border:1px solid rgba(148,163,184,.5);
+      color:var(--muted);
+      margin-top:6px;
+    }
+    .chip strong{color:var(--accent);}
+
+    /* Panel 2: two arms with a shared center explanation */
+    .arms{
+      margin-top:10px;
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr 1.2fr;
+      gap:10px;
+    }
+    .arm{
+      background:rgba(15,23,42,.82);
+      border:1px solid rgba(148,163,184,.4);
+      border-radius:12px;
+      padding:10px;
+      font-size:11px;
+    }
+    .arm-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:8px;
+      margin-bottom:8px;
+    }
+    .arm-name{
+      font-weight:800;
+      color:var(--ink);
+    }
+    .arm-tag{
+      font-size:10px;
+      padding:2px 7px;
+      border-radius:999px;
+      background:#020617;
+      border:1px solid rgba(148,163,184,.5);
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.07em;
+      white-space:nowrap;
+    }
+
+    .block{
+      background:#020617;
+      border:1px solid rgba(148,163,184,.5);
+      border-radius:10px;
+      padding:7px 8px;
+      margin-top:6px;
+    }
+    .block-title{
+      font-weight:750;
+      font-size:11px;
+      margin-bottom:2px;
+    }
+    .block-sub{
+      font-size:10px;
+      color:var(--muted);
+      line-height:1.35;
+    }
+
+    .branch{
+      margin:8px 0 2px;
+      display:grid;
+      place-items:center;
+      gap:4px;
+    }
+    .stem{
+      width:2px;height:10px;background:rgba(148,163,184,.75);
+      border-radius:2px;
+    }
+    .branch-label{
+      font-size:9px;
+      text-transform:uppercase;
+      letter-spacing:.09em;
+      color:var(--muted);
+    }
+
+    .targets{
+      margin-top:6px;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+      position:relative;
+      padding-top:10px;
+    }
+    .targets::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:10%;
+      right:10%;
+      border-top:1px solid rgba(148,163,184,.55);
+    }
+
+    .pill-row{
+      margin-top:4px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .pill{
+      padding:2px 7px;
+      border-radius:999px;
+      font-size:9px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      border:1px solid rgba(148,163,184,.6);
+      color:var(--muted);
+      background:transparent;
+      white-space:nowrap;
+    }
+    .pill-base{border-color:#38bdf8;color:#38bdf8;}
+    .pill-pc{border-color:var(--ok);color:var(--ok);}
+    .pill-tamper{border-color:var(--fail);color:var(--fail);}
+    .pill-op1{border-color:var(--op1);color:var(--op1);}
+    .pill-op2{border-color:var(--op2);color:var(--op2);}
+    .pill-hmac{border-color:var(--warn);color:var(--warn);}
+
+    .center{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      justify-content:center;
+    }
+    .center-card{
+      background:#020617;
+      border:1px solid rgba(148,163,184,.55);
+      border-radius:12px;
+      padding:9px 10px;
+      font-size:11px;
+      line-height:1.35;
+    }
+    .center-section{
+      padding:6px 0;
+      border-bottom:1px solid rgba(148,163,184,.22);
+    }
+    .center-section:last-child{border-bottom:none;}
+    .center-title{
+      font-weight:750;
+      margin-bottom:2px;
+      color:var(--ink);
+    }
+    .center-body{
+      color:var(--muted);
+      font-size:11px;
+    }
+
+    /* Small footer note */
+    .foot{
+      margin-top:10px;
+      font-size:10px;
+      color:var(--muted);
+      line-height:1.35;
+    }
+
+    @media (max-width:980px){
+      .corpus-row{grid-template-columns:1fr;}
+      .arms{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Sentinel QMS v4 · Stage IIIB · Context Figure (Panels 1–2)</div>
+      <h3>Stage IIIB — Dual-Arm, Double-Blind HMAC Deletion Challenge (Context)</h3>
+      <div class="subtitle">
+        High-level design summary of Stage IIIB used to establish large-scale, randomized negative controls and cross-operator
+        independence before Stage IV. This figure is context-only; operational plans and execution logs remain governed and archived.
+      </div>
+    </div>
+
+    <div class="grid">
+
+      <!-- PANEL 1 -->
+      <section class="card">
+        <div class="title"><span class="step">1</span>Frozen Evidence Corpora (Byte-Identical) → Clean QMS Environment</div>
+        <div class="body">
+          Two frozen evidence corpora are cloned into a clean Sentinel QMS environment for deterministic machine-audit testing.
+          Evidence is already frozen, dual-hashed, and Bitcoin-anchored prior to Stage IIIB.
+        </div>
+
+        <div class="corpus-row">
+          <div class="mini">
+            <div class="mini-title">Multi-Entity Corpus</div>
+            <div class="mini-line">Pre-blinded and joined to Stage IIIB as a separate arm (corporate / trust evidence).</div>
+            <div class="mini-line mono">SENTINFRA · METAVAL · multi-entity evidence bundle</div>
+            <div class="chip"><strong>n =</strong> 6,152 evidence files (≈ 5.99 GB)</div>
+          </div>
+
+          <div class="mini">
+            <div class="mini-title">AuditLog.AI Corpus</div>
+            <div class="mini-line">User-simulation evidence and regulatory sessions (REGULATORY-RUN001–RUN016).</div>
+            <div class="mini-line mono">AuditLogAI.REG.GlobalSubmission.v4</div>
+            <div class="chip"><strong>n =</strong> 1,087 evidence files (≈ 10.4 GB)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANEL 2 -->
+      <section class="card">
+        <div class="title"><span class="step">2</span>Double-Blind, HMAC-Randomized Two-Arm Challenge</div>
+        <div class="body">
+          Each arm begins as a blinded baseline and branches into (i) a positive-control re-export and (ii) an HMAC-randomized deletion
+          working copy. Operators alternate arms and are blinded to both file identity and deletion pattern.
+        </div>
+
+        <div class="arms">
+
+          <!-- LEFT ARM -->
+          <div class="arm">
+            <div class="arm-head">
+              <div class="arm-name">Multi-Entity Arm</div>
+              <div class="arm-tag">Arm A</div>
+            </div>
+
+            <div class="block">
+              <div class="block-title">RUN010 — MULTI_BASELINE</div>
+              <div class="block-sub">Blinded baseline (QMS IDs applied).</div>
+              <div class="pill-row">
+                <span class="pill pill-base">Baseline</span>
+                <span class="pill pill-op1">Operator 1</span>
+              </div>
+            </div>
+
+            <div class="branch">
+              <div class="stem"></div>
+              <div class="branch-label">Branch</div>
+            </div>
+
+            <div class="targets">
+              <div class="block">
+                <div class="block-title">RUN012 — MULTI_HMAC_TAMPER</div>
+                <div class="block-sub">
+                  Secret HMAC salt selects files for deletion; deleted files moved to <span class="mono">_HMAC_DELETED/</span>.
+                </div>
+                <div class="pill-row">
+                  <span class="pill pill-tamper">HMAC Tamper</span>
+                  <span class="pill pill-op1">Operator 1</span>
+                  <span class="pill pill-hmac">_HMAC_DELETED/</span>
+                </div>
+              </div>
+
+              <div class="block">
+                <div class="block-title">RUN014 — MULTI_PC_USS</div>
+                <div class="block-sub">External USS re-export (positive control; no intentional tamper).</div>
+                <div class="pill-row">
+                  <span class="pill pill-pc">Positive Control</span>
+                  <span class="pill pill-op2">Operator 2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CENTER EXPLANATION -->
+          <div class="center">
+            <div class="center-card">
+              <div class="center-section">
+                <div class="center-title">QMS Renaming (Blinding)</div>
+                <div class="center-body">All file and directory names are converted to randomized QMS identifiers; operators see anonymized labels.</div>
+              </div>
+              <div class="center-section">
+                <div class="center-title">HMAC Salt (Randomized Deletion)</div>
+                <div class="center-body">A secret salt selects files for deletion in tamper runs only; the deletion pattern is hidden from operators.</div>
+              </div>
+              <div class="center-section">
+                <div class="center-title">Two Operators (Independence)</div>
+                <div class="center-body">Operators alternate arms and conditions to avoid dependence on a single operator or corpus.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT ARM -->
+          <div class="arm">
+            <div class="arm-head">
+              <div class="arm-name">AuditLog.AI Arm</div>
+              <div class="arm-tag">Arm B</div>
+            </div>
+
+            <div class="block">
+              <div class="block-title">RUN011 — AUDITLOGAI_BASELINE</div>
+              <div class="block-sub">Blinded baseline (deduped manifests, QMS IDs applied).</div>
+              <div class="pill-row">
+                <span class="pill pill-base">Baseline</span>
+                <span class="pill pill-op2">Operator 2</span>
+              </div>
+            </div>
+
+            <div class="branch">
+              <div class="stem"></div>
+              <div class="branch-label">Branch</div>
+            </div>
+
+            <div class="targets">
+              <div class="block">
+                <div class="block-title">RUN013 — AUDITLOGAI_HMAC_TAMPER</div>
+                <div class="block-sub">
+                  Secret HMAC salt deletes a blinded subset; deletions tracked in <span class="mono">_HMAC_DELETED/</span>.
+                </div>
+                <div class="pill-row">
+                  <span class="pill pill-tamper">HMAC Tamper</span>
+                  <span class="pill pill-op2">Operator 2</span>
+                  <span class="pill pill-hmac">_HMAC_DELETED/</span>
+                </div>
+              </div>
+
+              <div class="block">
+                <div class="block-title">RUN015 — AUDITLOGAI_PC_USS</div>
+                <div class="block-sub">USS re-export (positive control; no intentional tamper).</div>
+                <div class="pill-row">
+                  <span class="pill pill-pc">Positive Control</span>
+                  <span class="pill pill-op1">Operator 1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="foot">
+          <strong>Tamper set cardinality note (Stage IIIB datasets):</strong> MULTI HMAC deletion set contains <strong>20</strong> deleted evidence files. AuditLog.AI HMAC deletion set contains <strong>17</strong> deleted evidence files due to IIIB-era tamper generation event executed against an empty folder for three intended deletions (no deletions occurred). Stage IV evaluates detection against the deletions present in each dataset.
+          Panels 1–2 for context; full results and verification outputs are reported elsewhere in the Stage IV evidence package.
+        </div>
+      </section>
+
+    </div>
+  </div>
+</body>
+</html>

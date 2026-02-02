@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sentinel QMS v4 — Stage IIIA Context Figure</title>
+  <style>
+    /* Dark theme aligned with Stage IIIB figure */
+    .e2e-wrap{
+      --bg:#0b1220; --card:#0f1b33; --ink:#e9eef8; --muted:#9fb0c9;
+      --accent:#4cc9f0; --ok:#22c55e; --warn:#facc15; --fail:#f97373;
+      --line:rgba(255,255,255,.06);
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;
+      background: linear-gradient(180deg,#020617 0%,#020617 100%);
+      color: var(--ink);
+      border-radius: 18px;
+      padding: 22px;
+      margin: 24px auto;
+      max-width: 1180px;
+      box-shadow: 0 10px 40px rgba(0,0,0,.5);
+    }
+    body{margin:0;padding:16px;background:#020617;}
+    .e2e-head{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);}
+    .e2e-head h3{margin:0;font-weight:800;letter-spacing:.03em;font-size:20px;}
+    .e2e-head .subtitle{color:var(--muted);font-size:13px;max-width:860px;}
+
+    .e2e-card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px 14px;
+      position: relative;
+      page-break-inside: avoid;
+      margin-bottom:12px;
+    }
+    .e2e-step{
+      width:24px;height:24px;border-radius:999px;
+      display:inline-grid;place-items:center;
+      background:#020617;border:1px solid rgba(148,163,184,.55);
+      font-size:12px;font-weight:700;margin-right:8px;
+    }
+    .e2e-title{
+      font-size:13px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
+    }
+    .e2e-body{margin-top:4px;font-size:12px;color:var(--muted);}
+
+    .mini-card{
+      background:rgba(15,23,42,.9);
+      border-radius:10px;
+      padding:8px 9px;
+      border:1px solid rgba(148,163,184,.35);
+      font-size:11px;
+    }
+    .mini-title{font-weight:600;font-size:11px;margin-bottom:2px;}
+    .mono{font-family: ui-monospace,SFMono-Regular,Menlo,monospace;}
+
+    .chip{
+      display:inline-flex;align-items:center;gap:5px;
+      padding:3px 7px;border-radius:999px;font-size:10px;
+      text-transform:uppercase;letter-spacing:.08em;
+      background:#020617;color:var(--muted);
+      border:1px solid rgba(148,163,184,.5);margin-top:4px;
+    }
+    .chip span{font-weight:700;color:var(--accent);}
+
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:8px;}
+    .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px;}
+    @media (max-width:980px){.grid2,.grid3{grid-template-columns:1fr;}}
+
+    .pill{
+      padding:2px 6px;border-radius:999px;font-size:9px;
+      text-transform:uppercase;letter-spacing:.08em;
+      border:1px solid rgba(148,163,184,.6);
+      display:inline-block;margin-right:4px;margin-top:4px;
+    }
+    .pill-base{border-color:#38bdf8;color:#38bdf8;}
+    .pill-pc{border-color:var(--ok);color:var(--ok);}
+    .pill-tamper{border-color:var(--fail);color:var(--fail);}
+    .pill-ctrl{border-color:rgba(148,163,184,.7);color:var(--muted);}
+
+    .class-list{margin:6px 0 0;padding-left:16px;color:var(--muted);font-size:11px;}
+    .class-list li{margin:2px 0;}
+    .metric-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+    .metric-pill{
+      padding:3px 7px;border-radius:999px;font-size:10px;
+      background:#020617;border:1px solid rgba(148,163,184,.6);
+      color:var(--muted);
+    }
+    .metric-pill strong{color:var(--ink);}
+    .metric-pill-ok{border-color:var(--ok);color:var(--ok);}
+    .metric-pill-fail{border-color:var(--fail);color:var(--fail);}
+    .note{font-size:10px;color:var(--muted);margin-top:6px;}
+    .results-card{border-color:var(--accent);box-shadow:0 0 0 1px rgba(76,201,240,.35);}
+    .results-card .mini-title{color:var(--accent);}
+  </style>
+</head>
+<body>
+<div class="e2e-wrap">
+  <div class="e2e-head">
+    <div class="eyebrow">Sentinel QMS v4 · Stage IIIA · Randomized Adversarial Tamper Challenge (Context)</div>
+    <h3>Stage IIIA — Human-Designed Mixed Tamper Regime</h3>
+    <div class="subtitle">
+      High-level context summary of the Stage IIIA adversarial tamper challenge used to establish mixed tamper coverage prior to Stage IV.
+      This figure is context-only (no filenames or evidence content). Full execution artifacts remain archived and verifiable via anchored proofs.
+    </div>
+  </div>
+
+  <!-- STEP 1 -->
+  <section class="e2e-card">
+    <div class="e2e-title"><span class="e2e-step">1</span>Frozen Baseline Corpus (Reference State)</div>
+    <div class="e2e-body">
+      A frozen, anchored baseline corpus was used as the reference state for deterministic comparison. Working copies were generated for tamper
+      challenge and positive controls while preserving the baseline unchanged.
+    </div>
+    <div class="grid2">
+      <div class="mini-card">
+        <div class="mini-title">Regulatory Corpus (Stage IIIA)</div>
+        <div class="chip"><span>n =</span> 1,087 evidence files</div>
+        <div class="note">Sessions: REGULATORY-RUN001–RUN016 (baseline preserved unchanged).</div>
+      </div>
+      <div class="mini-card results-card">
+        <div class="mini-title">Stage IIIA Objective</div>
+        <div class="e2e-body" style="margin:0;color:var(--muted);">
+          Deterministically detect and enumerate diverse post-export integrity violations (mixed tamper classes),
+          while avoiding false positives on untouched files.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="e2e-card">
+    <div class="e2e-title"><span class="e2e-step">2</span>Adversarial Tamper + Controls (Working Copies)</div>
+    <div class="e2e-body">
+      Tamper-positive events were applied to a working copy under randomized selection constraints. Rename-only controls were included to confirm
+      that representational changes without byte changes do not break cryptographic parity.
+    </div>
+
+    <div class="grid3">
+      <div class="mini-card">
+        <div class="mini-title">Baseline (RUN006)</div>
+        <span class="pill pill-base">Baseline</span>
+        <div class="note">Reference state (no modifications).</div>
+      </div>
+
+      <div class="mini-card">
+        <div class="mini-title">Working Tamper (RUN007)</div>
+        <span class="pill pill-tamper">Tamper-positive</span>
+        <div class="note">Deliberate mixed tamper applied to working copy.</div>
+        <ul class="class-list">
+          <li>Micro-edits (text/CSV/JSON): <strong>8</strong></li>
+          <li>PDF/Word content edits: <strong>8</strong></li>
+          <li>File deletions: <strong>5</strong></li>
+          <li>Spurious insertions: <strong>5</strong></li>
+          <li>Cross-session swaps (2 pairs): <strong>4</strong></li>
+          <li>Metadata-level byte changes: <strong>4</strong></li>
+        </ul>
+        <div class="note"><strong>Total tamper-positive files:</strong> 34</div>
+      </div>
+
+      <div class="mini-card">
+        <div class="mini-title">Positive Controls (RUN008)</div>
+        <span class="pill pill-pc">Positive control</span>
+        <span class="pill pill-ctrl">Rename-only control</span>
+        <div class="note">
+          Re-export / transfer controls intended to preserve byte identity. Rename-only changes (n=3) demonstrate name/path invariance when bytes are unchanged.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="e2e-card">
+    <div class="e2e-title"><span class="e2e-step">3</span>Deterministic Detection Outcome (Stage IIIA)</div>
+    <div class="e2e-body">
+      Deterministic comparison against the anchored baseline detected all tamper-positive events and produced no false positives on untouched files.
+      Swap events were detected as membership divergence; swap enumeration required bounded context-aware verification (HVT-B).
+    </div>
+
+    <div class="grid2">
+      <div class="mini-card results-card">
+        <div class="mini-title">Detection Performance</div>
+        <div class="metric-row">
+          <div class="metric-pill metric-pill-ok"><strong>Sensitivity</strong> 100% (34/34)</div>
+          <div class="metric-pill metric-pill-ok"><strong>Specificity</strong> 100% (0 false positives)</div>
+        </div>
+        <div class="note">
+          Rename-only controls preserved cryptographic parity (PASS). Full event logs, tamper tree, and proof artifacts are archived.
+        </div>
+      </div>
+
+      <div class="mini-card">
+        <div class="mini-title">Anchoring and Time-Separation</div>
+        <div class="e2e-body" style="margin:0;color:var(--muted);">
+          Stage IIIA baseline and tamper states were frozen and time-anchored prior to Stage IV blinded verification.
+          Stage IV evaluates cross-platform verification on hash-only packets under representational collapse.
+        </div>
+        <div class="note">
+          See Supplement: reproducibility package (hash-only artifacts + scripts) for independent re-derivation of the reported outputs.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
