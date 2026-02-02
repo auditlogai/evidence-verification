@@ -1,0 +1,125 @@
+<!-- =========================================================
+  SECTION: End-to-End Pipeline (insert after "System Description & Operating Model")
+  PURPOSE: Zero-custody → human gate → Bitcoin anchoring flow (export-ready)
+  EXPORT: Browser Print → Save as PDF  (enable "Background graphics")
+  ========================================================== -->
+<meta charset="utf-8">
+<section id="end-to-end-pipeline" aria-labelledby="e2e-title">
+  <style>
+    .e2e-wrap{
+      --bg:#0b1220; --card:#0f1b33; --ink:#e9eef8; --muted:#9fb0c9;
+      --accent:#4cc9f0; --ok:#00d084; --line:rgba(255,255,255,.06);
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;
+      background: linear-gradient(180deg,#0b1220 0%,#0e152b 100%);
+      color: var(--ink);
+      border-radius: 18px;
+      padding: 24px;
+      margin: 28px 0;
+      box-shadow: 0 8px 30px rgba(0,0,0,.35);
+    }
+    .e2e-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+    .e2e-head h3{margin:0;font-weight:800;letter-spacing:.2px}
+    .e2e-head .subtitle{color:var(--muted);font-size:14px}
+    .e2e-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;align-items:stretch}
+    .e2e-card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 16px;
+      position: relative;
+      break-inside: avoid;          /* avoid page splits */
+      page-break-inside: avoid;     /* legacy print engines */
+    }
+    .e2e-step{
+      width:26px;height:26px;border-radius:999px;display:inline-grid;place-items:center;
+      background:#0c2436;border:1px solid rgba(76,201,240,.35);color:#cfe6ff;font-weight:700;font-size:13px;margin-bottom:10px
+    }
+    .e2e-card h4{margin:0 0 6px;font-size:15px;color:#cfe6ff}
+    .e2e-card p{margin:0;font-size:13px;line-height:1.38;color:var(--muted)}
+    .badge{
+      display:inline-flex;align-items:center;gap:7px;margin-top:10px;
+      font-size:12px;color:#b6c6de;background:#0c2436;border:1px solid rgba(76,201,240,.35);
+      padding:6px 9px;border-radius:999px
+    }
+    .mono{font-family: ui-monospace,SFMono-Regular,Menlo,monospace}
+    .divider{height:1px;background:var(--line);margin:16px 0}
+    .foot{font-size:12px;color:#b6c6de;margin-top:8px}
+
+    @media (max-width:980px){.e2e-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:560px){.e2e-grid{grid-template-columns:1fr}}
+    @media (prefers-color-scheme:light){
+      .e2e-wrap{--bg:#ffffff;--ink:#0b1220;--muted:#4b5a6f;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+      .e2e-card{background:#f6f8fb;border-color:rgba(0,0,0,.08)}
+      .badge{background:#e8f7ff;color:#084a63}
+    }
+
+    /* Print: keep dark theme and prevent color washout */
+    @media print{
+      .e2e-wrap{print-color-adjust: exact; -webkit-print-color-adjust: exact;}
+      .e2e-card{break-inside: avoid; page-break-inside: avoid;}
+    }
+  </style>
+
+  <div class="e2e-wrap">
+    <header class="e2e-head">
+      <h3 id="e2e-title">End-to-End Proof-of-Unchanged Reproducibility Pipeline</h3>
+      <div class="subtitle">Zero-custody • Human-approved • Publicly verifiable</div>
+    </header>
+
+    <div class="e2e-grid" role="list">
+      <!-- 1 -->
+      <article class="e2e-card" role="listitem" aria-label="Assemble & Review">
+        <div class="e2e-step">1</div>
+        <h4>Assemble &amp; Review</h4>
+        <p>QA-approved evidence bundle (1&ndash;10,000 unique evidence files) selected for freeze.</p>
+        <div class="badge" aria-label="Non-device boundary">Non-device; no diagnosis/therapy</div>
+      </article>
+
+      <!-- 2 -->
+      <article class="e2e-card" role="listitem" aria-label="Freeze & Hash">
+        <div class="e2e-step">2</div>
+        <h4>Freeze &amp; Hash</h4>
+        <p>Compute digests locally:<br>
+          <span class="mono">SHA-256&nbsp;&rarr;&nbsp;RIPEMD-160</span> (dual-hash). Generate <span class="mono">.hash</span>, <span class="mono">.2ha</span>, <span class="mono">.hash.ots</span>.
+        </p>
+        <div class="badge" aria-label="Zero custody">Zero-custody data-flow (cryptographic proofs only; no PHI/PII)</div>
+      </article>
+
+      <!-- 3 -->
+      <article class="e2e-card" role="listitem" aria-label="Mandatory Human Verification">
+        <div class="e2e-step">3</div>
+        <h4>Mandatory Human Verification</h4>
+        <p>Approver identity, UTC timestamp, and intent captured (multi-layer access control; personal/institutional login).</p>
+        <div class="badge" aria-label="Gate control">eSignature gate | CME Rules 1, 5</div>
+      </article>
+
+      <!-- 4 -->
+      <article class="e2e-card" role="listitem" aria-label="Blockchain Anchoring">
+        <div class="e2e-step">4</div>
+        <h4>Blockchain Anchoring</h4>
+        <p>AuditLog.AI broadcasts payload to Bitcoin public ledger:<br>
+          <code class="mono">SENTINEL|SESSION|&lt;ripemd160&gt;|&lt;sha8&gt;</code>
+        </p>
+        <div class="badge" aria-label="Public ledger parity">OP_RETURN parity | CME Rule 4</div>
+      </article>
+
+      <!-- 5 -->
+      <article class="e2e-card" role="listitem" aria-label="Verify & Retrieve">
+        <div class="e2e-step">5</div>
+        <h4>Verify &amp; Retrieve</h4>
+        <p>Recompute SHA-256/RIPEMD-160 any time from local frozen sources; match TXID, payload &amp; block height on public explorers.</p>
+        <div class="badge" aria-label="Explorers">e.g. blockchain.com | blockstream.info</div>
+      </article>
+    </div>
+
+    <div class="divider" role="presentation"></div>
+
+    <!-- Optional live example row: keep or mask as you prefer -->
+    <p class="foot">
+      REGULATORY-RUN015 payload: <code class="mono">SENTINEL|SESSION|9820d4fea8db0fd96e576cabc3c3ac1f2f1bcb62|6936c54c</code> &nbsp;TXID:
+      <code class="mono">d2746ef74e5d678861b06018394af473ead923ce2ee589d527c2204cce8dc708</code> Block Height:
+      <code class="mono">922142</code>
+      <!-- TODO: Mask these if you prefer a neutral example for email; keep if you want "live" credibility. -->
+    </p>
+  </div>
+</section>
