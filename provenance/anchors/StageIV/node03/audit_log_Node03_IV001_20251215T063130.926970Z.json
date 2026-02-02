@@ -1,0 +1,45 @@
+[
+  {
+    "timestamp": "2025-12-15T06:31:30.926918Z",
+    "event": "ANCHOR_OP_RETURN_REGISTERED",
+    "meta_id": "Node03_IV001",
+    "input": {
+      "session_context": "Node03_IV-RUN-20251215-S01",
+      "session_meta_id": "Node03_IV001",
+      "txid": "6677cd45b34a980af165c5509ec43b20c048378a015e1a9a83b809790692191e",
+      "block_height": 927938,
+      "payload": "SENTINEL|SESSION|ec2d1d56427bf29c39f8e386fdeaf078f614313c|e9daabb0",
+      "source_receipt": "(bundle:Node03_IV001)",
+      "hash_source": "bundle.job_hashes"
+    },
+    "output": {
+      "status": "anchored",
+      "anchored": true,
+      "txid": "6677cd45b34a980af165c5509ec43b20c048378a015e1a9a83b809790692191e",
+      "block": 927938,
+      "payload": "SENTINEL|SESSION|ec2d1d56427bf29c39f8e386fdeaf078f614313c|e9daabb0",
+      "sha256": "e9daabb0a0fc79f075f51687cb2ec6f6d385b2d172cd4eacaca65977a06f40dd",
+      "ripemd160": "ec2d1d56427bf29c39f8e386fdeaf078f614313c"
+    },
+    "audit": {
+      "AI_used": true,
+      "LLM_used": "LLM1",
+      "human_verified": true,
+      "module_version": "v.december15.25",
+      "ai_editor_LLM_human_agreement": true,
+      "VALIS_template_enforced": true,
+      "reviewer": "Dr. Fernando Telles",
+      "human_signature": {
+        "signer": "DRTELLES",
+        "decision": "approved",
+        "reason": "anchor confirmed on-chain",
+        "signed_at_utc": "2025-12-15T06:31:30Z",
+        "txid": "6677cd45b34a980af165c5509ec43b20c048378a015e1a9a83b809790692191e",
+        "block": 927938,
+        "signed_at": "2025-12-15T06:31:30.925088Z"
+      },
+      "AI_override": false
+    },
+    "timestamp_confirmed": true
+  }
+]

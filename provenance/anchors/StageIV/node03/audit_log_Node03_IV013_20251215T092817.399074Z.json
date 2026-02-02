@@ -1,0 +1,45 @@
+[
+  {
+    "timestamp": "2025-12-15T09:28:17.399000Z",
+    "event": "ANCHOR_OP_RETURN_REGISTERED",
+    "meta_id": "Node03_IV013",
+    "input": {
+      "session_context": "Node03_IV-RUN-20251215-S01",
+      "session_meta_id": "Node03_IV013",
+      "txid": "10920cc262f1425d77492c363c0ff218ed8e744d2abf4ed1fa6771cb751046a3",
+      "block_height": 927951,
+      "payload": "SENTINEL|SESSION|e2ab2ae6521507b7b4c98988d70a1ce9eef89090|b7a4c84c",
+      "source_receipt": "(bundle:Node03_IV013)",
+      "hash_source": "bundle.job_hashes"
+    },
+    "output": {
+      "status": "anchored",
+      "anchored": true,
+      "txid": "10920cc262f1425d77492c363c0ff218ed8e744d2abf4ed1fa6771cb751046a3",
+      "block": 927951,
+      "payload": "SENTINEL|SESSION|e2ab2ae6521507b7b4c98988d70a1ce9eef89090|b7a4c84c",
+      "sha256": "b7a4c84c83c3ad4073727b4df323bf51c125d678802662fe3a7531926c1d2ce5",
+      "ripemd160": "e2ab2ae6521507b7b4c98988d70a1ce9eef89090"
+    },
+    "audit": {
+      "AI_used": true,
+      "LLM_used": "LLM1",
+      "human_verified": true,
+      "module_version": "v.december15.25",
+      "ai_editor_LLM_human_agreement": true,
+      "VALIS_template_enforced": true,
+      "reviewer": "Dr. Andrew Woo",
+      "human_signature": {
+        "signer": "DRWOO",
+        "decision": "approved",
+        "reason": "anchor confirmed on-chain",
+        "signed_at_utc": "2025-12-15T09:28:17Z",
+        "txid": "10920cc262f1425d77492c363c0ff218ed8e744d2abf4ed1fa6771cb751046a3",
+        "block": 927951,
+        "signed_at": "2025-12-15T09:28:17.394650Z"
+      },
+      "AI_override": false
+    },
+    "timestamp_confirmed": true
+  }
+]
